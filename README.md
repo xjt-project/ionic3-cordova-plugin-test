@@ -1,10 +1,13 @@
 
-####文件目录介绍
+
+
+
+### 文件目录介绍
 
 * testPlugin：自定义插件工程
 * testIonic：ionic项目，用于测试testPlugin插件
 
-####新建插件
+### 新建插件
 
 ````
   在终端执行：
@@ -18,7 +21,7 @@
   如果没有安装plugman，需要先执行:npm install -g plugman
 ````
 
-####给插件添加平台
+### 给插件添加平台
 
 * cd到插件对应的根目录
 * 在根目录执行：plugman platform add --platform_name android
@@ -87,7 +90,7 @@ exports.coolMethod = function (arg0, success, error) {
 };
 ````
 
-####配置plugin.xml文件：
+### 配置plugin.xml文件：
 这一步最关键，因为在这个文件里面配置了Android项目需要的源代码文件、权限、资源文件、图片等。如果这一步配置错了，后面会导致原生项目编译无法通过。比如这里的plugin.xml:
   
 ````
@@ -116,7 +119,7 @@ exports.coolMethod = function (arg0, success, error) {
 ````
 
 
-####初始化package.json
+### 初始化package.json
 
 我们开的插件，最终需要提供给别人安装使用的，因此插件必须包含package.json,生成package.json方法如下：
 ![](image/createPackage.png)
@@ -128,7 +131,7 @@ exports.coolMethod = function (arg0, success, error) {
 
 ------
 
-####ionic项目中测试插件
+### ionic项目中测试插件
 
 ````
   1,新建项目：
