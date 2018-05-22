@@ -102,6 +102,7 @@ exports.coolMethod = function (arg0, success, error) {
 这一步最关键，因为在这个文件里面配置了Android项目需要的源代码文件、权限、资源文件、图片等。如果这一步配置错了，后面会导致原生项目编译无法通过。比如这里的plugin.xml:
   
 ````
+
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--id:插件的标识，即发布安装到plugin的ID，这个ID应该是唯一的-->
