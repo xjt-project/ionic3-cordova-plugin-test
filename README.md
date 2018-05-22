@@ -98,6 +98,8 @@ exports.coolMethod = function (arg0, success, error) {
     <name>testPlugin</name><!--插件的名称-->
     <js-module name="testPlugin" src="www/testPlugin.js"><!--对应的JS文件-->
         <clobbers target="cordova.plugins.testPlugin"/>
+        <!--插件在JS中的调用的前缀，调用的时候应该写成：cordova.plugins.testPlugin.方法名 -->
+        <!--如果将上面的target配置为xjtPlugin，在JS中应该这样调用：xjtPlugin.方法名  -->
     </js-module>
     
     <platform name="android"><!--Android平台配置-->
@@ -113,6 +115,7 @@ exports.coolMethod = function (arg0, success, error) {
 
 ````
 
+
 ####初始化package.json
 
 我们开的插件，最终需要提供给别人安装使用的，因此插件必须包含package.json,生成package.json方法如下：
@@ -125,8 +128,35 @@ exports.coolMethod = function (arg0, success, error) {
 
 ------
 
-####新建ionic项目
+####ionic项目中测试插件
 
+````
+  1,新建项目：
+      ionic start testIonic3 tabs
+  2,cd到ionic项目根目录    
+  3,安装插件
+      ionic cordova plugin add 插件目录
+  4，调用插件
+       import { Component } from '@angular/core';
+		import { NavController } from 'ionic-angular';
+		declare let cordova: any;//引入
+		@Component({
+		  selector: 'page-home',
+		  templateUrl: 'home.html'
+		})
+		export class HomePage {
+		
+		  ....
+	    cordova.plugins.TestPlugin.coolMethod("向原生传递的参数",
+	      result => {
+	        alert(result)
+	      },
+	      error => {
+	        alert(error)
+	      });
+		  ....
+		}    
+````
 
 
 
