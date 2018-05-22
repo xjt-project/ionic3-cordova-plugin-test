@@ -14,8 +14,8 @@ export class HomePage {
 
   callTestPlugin() {
 
-    console.log("====>>>>1111");
-    cordova.plugins.testPlugin.coolMethod("向原生传递的参数",
+    //调用原生方法
+    cordova.plugins.testPlugin.coolMethod("向底层传递传递的参数",
       result => {
         alert(result)
       },
@@ -26,12 +26,13 @@ export class HomePage {
 
   openPage(){
 
-    cordova.plugins.testPlugin.open("xx",
+    //打开原生页面 
+    cordova.plugins.testPlugin.open("open page",
       result => {
-        //alert(result)
+        console.log("result:"+result);
       },
       error => {
-       // alert(error)
+         console.log("error:"+error);
       });
 
   }
