@@ -1,13 +1,21 @@
 
+### 插件开发步骤
+* <a href="#新建插件">新建插件</a>
+* <a href="#给插件添加平台">给插件添加平台</a>
+* <a href="#配置plugin.xml文件">配置插件</a>
+* <a href="#ionic项目中测试插件">测试插件</a>
 
 
+----
 
 ### 文件目录介绍
 
 * testPlugin：自定义插件工程
 * testIonic：ionic项目，用于测试testPlugin插件
 
-### 新建插件
+----
+
+### <span id="新建插件">新建插件<span>
 
 ````
   在终端执行：
@@ -21,7 +29,7 @@
   如果没有安装plugman，需要先执行:npm install -g plugman
 ````
 
-### 给插件添加平台
+### <span id="给插件添加平台">给插件添加平台</span>
 
 * cd到插件对应的根目录
 * 在根目录执行：plugman platform add --platform_name android
@@ -90,7 +98,7 @@ exports.coolMethod = function (arg0, success, error) {
 };
 ````
 
-### 配置plugin.xml文件：
+### <span id="配置plugin.xml文件">配置plugin.xml文件：</span>
 这一步最关键，因为在这个文件里面配置了Android项目需要的源代码文件、权限、资源文件、图片等。如果这一步配置错了，后面会导致原生项目编译无法通过。比如这里的plugin.xml:
   
 ````
@@ -131,7 +139,7 @@ exports.coolMethod = function (arg0, success, error) {
 
 ------
 
-### ionic项目中测试插件  [ts文件](testIonic3/src/pages/home/home.ts)  [Java文件](testPlugin/src/android/testPlugin.java)
+### <span id="ionic项目中测试插件">ionic项目中测试插件</span>  [ts文件](testIonic3/src/pages/home/home.ts)  [Java文件](testPlugin/src/android/testPlugin.java)
 
 ````
   1,新建项目：
