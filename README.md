@@ -131,7 +131,7 @@ exports.coolMethod = function (arg0, success, error) {
 
 ------
 
-### ionic项目中测试插件
+### ionic项目中测试插件  [ts文件](testIonic3/src/pages/home/home.ts)  [Java文件](testPlugin/src/android/testPlugin.java)
 
 ````
   1,新建项目：
